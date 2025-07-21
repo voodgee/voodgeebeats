@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>voodgee | Type Beats for Sale</title>
     <style>
         body {
@@ -20,6 +19,7 @@
             padding: 60px 20px;
             text-align: center;
             background-color: #111;
+            position: relative;
         }
         header h1 {
             font-size: 52px;
@@ -30,6 +30,19 @@
         header p {
             font-size: 20px;
             color: #cccccc;
+        }
+        /* Переключатель языка */
+        #langSwitcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #222;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 14px;
         }
         section {
             padding: 40px 20px;
@@ -80,69 +93,156 @@
 </head>
 <body>
     <header>
-        <h1>voodgee</h1>
-        <p>Dark. Clean. Global. Type Beats 2025</p>
-        <a href="#beats" style="color:#ffffff;">↓ Listen Now</a>
+        <h1 id="title">voodgee</h1>
+        <p id="subtitle">Dark. Clean. Global. Type Beats 2025</p>
+        <a href="#beats" id="listenNow" style="color:#ffffff;">↓ Listen Now</a>
+        <button id="langSwitcher">Русский</button>
     </header>
 
     <section id="beats" class="player">
-        <h2>🎧 Beats</h2>
+        <h2 id="beatsTitle">🎧 Beats</h2>
         <iframe 
-  src="https://www.youtube.com/embed/videoseries?list=PLfIoaIKdGdFYhH885nXOC7PwaZxxesn0J" 
-  width="100%" 
-  height="400" 
-  frameborder="0" 
-  allowfullscreen>
-</iframe>
+          src="https://www.youtube.com/embed/videoseries?list=PLfIoaIKdGdFYhH885nXOC7PwaZxxesn0J" 
+          width="100%" 
+          height="400" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
     </section>
 
     <section class="pricing">
-        <h2>💰 Licenses & Prices</h2>
-        <div class="price-box">
+        <h2 id="pricesTitle">💰 Licenses & Prices</h2>
+        <div class="price-box" id="price1">
             <strong>🎼 Non-Exclusive License – $20</strong><br>
             MP3/WAV, for streaming, 1 music video, up to 50k plays.
         </div>
-        <div class="price-box">
+        <div class="price-box" id="price2">
             <strong>🔥 Exclusive License – $150+</strong><br>
             Full rights, tracked out files, unlimited use.
         </div>
-        <div class="price-box">
+        <div class="price-box" id="price3">
             <strong>🎯 Custom Beat – from $300</strong><br>
             Personalized production with revisions and support.
         </div>
-        <p>🇷🇺 Для покупателей из России — оплата по карте через Telegram или Instagram (связь ниже).</p>
+        <p id="ruNote">🇷🇺 Для покупателей из России — оплата по карте через Telegram или Instagram (связь ниже).</p>
 
         <div class="paypal-form">
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="voodgeebeats@gmail.com">
-                <input type="hidden" name="item_name" value="Voodgee Type Beat License">
-                <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="amount" value="20.00">
-                <input type="submit" value="💳 Купить через PayPal (Non-Exclusive)">
+                <input type="hidden" name="cmd" value="_xclick" />
+                <input type="hidden" name="business" value="voodgeebeats@gmail.com" />
+                <input type="hidden" name="item_name" value="Voodgee Type Beat License" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="amount" value="20.00" />
+                <input id="paypalButton" type="submit" value="💳 Купить через PayPal (Non-Exclusive)" />
             </form>
         </div>
     </section>
 
     <section class="about">
-        <h2>🧠 About voodgee</h2>
-        <p>
+        <h2 id="aboutTitle">🧠 About voodgee</h2>
+        <p id="aboutText">
             voodgee — битмейкер, создающий мрачные и атмосферные type beats в духе Travis, Metro, Carti и Kendrick.
             Работает с артистами RU и US сцен. Продает лицензии и делает кастомные заказы.
         </p>
     </section>
 
     <section class="contact">
-        <h2>📬 Contact & Links</h2>
+        <h2 id="contactTitle">📬 Contact & Links</h2>
         <p>Email: <a href="mailto:ven4ik.2.ven4ik@gmail.com">ven4ik.2.ven4ik@gmail.com</a></p>
         <p>YouTube: <a href="https://www.youtube.com/@voodgeebeats" target="_blank">@voodgeebeats</a></p>
         <p>Telegram: <a href="https://t.me/voodgee" target="_blank">@voodgee</a></p>
         <p>Instagram: <a href="https://www.instagram.com/scoooobydu/" target="_blank">@scoooobydu</a></p>
-        <p><em>Для связи по заказам — Telegram или Instagram.</em></p>
+        <p><em id="contactNote">Для связи по заказам — Telegram или Instagram.</em></p>
     </section>
 
     <footer>
         &copy; 2025 voodgee. All rights reserved.
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                title: 'voodgee',
+                subtitle: 'Dark. Clean. Global. Type Beats 2025',
+                listenNow: '↓ Listen Now',
+                beatsTitle: '🎧 Beats',
+                pricesTitle: '💰 Licenses & Prices',
+                price1: '🎼 Non-Exclusive License – $20\nMP3/WAV, for streaming, 1 music video, up to 50k plays.',
+                price2: '🔥 Exclusive License – $150+\nFull rights, tracked out files, unlimited use.',
+                price3: '🎯 Custom Beat – from $300\nPersonalized production with revisions and support.',
+                ruNote: '🇷🇺 For buyers from Russia — card payment via Telegram or Instagram (contacts below).',
+                paypalButton: '💳 Buy via PayPal (Non-Exclusive)',
+                aboutTitle: '🧠 About voodgee',
+                aboutText: 'voodgee is a beatmaker creating dark and atmospheric type beats in the style of Travis, Metro, Carti, and Kendrick. Works with RU and US artists. Sells licenses and makes custom orders.',
+                contactTitle: '📬 Contact & Links',
+                contactNote: 'For orders contact via Telegram or Instagram.'
+            },
+            ru: {
+                title: 'voodgee',
+                subtitle: 'Dark. Clean. Global. Type Beats 2025',
+                listenNow: '↓ Слушать',
+                beatsTitle: '🎧 Биты',
+                pricesTitle: '💰 Лицензии и цены',
+                price1: '🎼 Non-Exclusive License – $20\nMP3/WAV, для стриминга, 1 музыкальное видео, до 50к прослушиваний.',
+                price2: '🔥 Exclusive License – $150+\nПолные права, трекнутые файлы, неограниченное использование.',
+                price3: '🎯 Custom Beat – от $300\nПерсонализированное производство с доработками и поддержкой.',
+                ruNote: '🇷🇺 Для покупателей из России — оплата по карте через Telegram или Instagram (связь ниже).',
+                paypalButton: '💳 Купить через PayPal (Non-Exclusive)',
+                aboutTitle: '🧠 О voodgee',
+                aboutText: 'voodgee — битмейкер, создающий мрачные и атмосферные type beats в духе Travis, Metro, Carti и Kendrick. Работает с артистами RU и US сцен. Продает лицензии и делает кастомные заказы.',
+                contactTitle: '📬 Контакты и ссылки',
+                contactNote: 'Для связи по заказам — Telegram или Instagram.'
+            }
+        };
+
+        let currentLang = 'ru';
+
+        const elements = {
+            title: document.getElementById('title'),
+            subtitle: document.getElementById('subtitle'),
+            listenNow: document.getElementById('listenNow'),
+            beatsTitle: document.getElementById('beatsTitle'),
+            pricesTitle: document.getElementById('pricesTitle'),
+            price1: document.getElementById('price1'),
+            price2: document.getElementById('price2'),
+            price3: document.getElementById('price3'),
+            ruNote: document.getElementById('ruNote'),
+            paypalButton: document.getElementById('paypalButton'),
+            aboutTitle: document.getElementById('aboutTitle'),
+            aboutText: document.getElementById('aboutText'),
+            contactTitle: document.getElementById('contactTitle'),
+            contactNote: document.getElementById('contactNote'),
+            langSwitcher: document.getElementById('langSwitcher'),
+        };
+
+        function updateTexts(lang) {
+            currentLang = lang;
+            elements.title.textContent = translations[lang].title;
+            elements.subtitle.textContent = translations[lang].subtitle;
+            elements.listenNow.textContent = translations[lang].listenNow;
+            elements.beatsTitle.textContent = translations[lang].beatsTitle;
+            elements.pricesTitle.textContent = translations[lang].pricesTitle;
+            // Для price-box, добавляем разметку для переноса строки
+            elements.price1.innerHTML = '<strong>🎼 ' + translations[lang].price1.split('\n')[0] + '</strong><br>' + translations[lang].price1.split('\n')[1];
+            elements.price2.innerHTML = '<strong>🔥 ' + translations[lang].price2.split('\n')[0] + '</strong><br>' + translations[lang].price2.split('\n')[1];
+            elements.price3.innerHTML = '<strong>🎯 ' + translations[lang].price3.split('\n')[0] + '</strong><br>' + translations[lang].price3.split('\n')[1];
+            elements.ruNote.textContent = translations[lang].ruNote;
+            elements.paypalButton.value = translations[lang].paypalButton;
+            elements.aboutTitle.textContent = translations[lang].aboutTitle;
+            elements.aboutText.textContent = translations[lang].aboutText;
+            elements.contactTitle.textContent = translations[lang].contactTitle;
+            elements.contactNote.textContent = translations[lang].contactNote;
+
+            // Меняем текст кнопки переключения
+            elements.langSwitcher.textContent = lang === 'ru' ? 'English' : 'Русский';
+        }
+
+        elements.langSwitcher.addEventListener('click', () => {
+            updateTexts(currentLang === 'ru' ? 'en' : 'ru');
+        });
+
+        // Стартовый язык
+        updateTexts(currentLang);
+    </script>
 </body>
 </html>
